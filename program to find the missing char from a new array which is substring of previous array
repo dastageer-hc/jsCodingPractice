@@ -1,0 +1,22 @@
+//program to find the missing char from a new array which is substring of previous array
+
+let str1 = 'dastageer';
+let str2 = 'sastag';
+
+console.log(str1, '| ', str2)
+
+const strArr1 = Array.from(str1);
+const strArr2 = Array.from(str2);
+
+const str3 = strArr1.map((el, i, arr)=>{
+    
+    if(strArr2.length > i && strArr2[i] !== el) {
+      return strArr1[i];
+    }
+    else if(!strArr2.includes(el))
+      return el
+  
+}).filter((el)=>{if(el){return el}});
+
+// console.log(...str3)
+str3.forEach(el=>console.log(el))
